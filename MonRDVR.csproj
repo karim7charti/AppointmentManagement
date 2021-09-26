@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22E6BCBB-1844-49AD-9C94-3DDFF392FA26}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MonRDVR</RootNamespace>
+    <AssemblyName>MonRDVR</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonctionnaire\Accueil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\Accueil.Designer.cs">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\ADaccueil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\ADaccueil.Designer.cs">
+      <DependentUpon>ADaccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\ADcomptes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\ADcomptes.Designer.cs">
+      <DependentUpon>ADcomptes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\Add_ruenion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\Add_ruenion.Designer.cs">
+      <DependentUpon>Add_ruenion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\Admin_AC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\Admin_AC.Designer.cs">
+      <DependentUpon>Admin_AC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\ADruenion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\ADruenion.Designer.cs">
+      <DependentUpon>ADruenion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Add_bureau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Add_bureau.Designer.cs">
+      <DependentUpon>AD_Add_bureau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Add_FN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Add_FN.Designer.cs">
+      <DependentUpon>AD_Add_FN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_bureaux.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_bureaux.Designer.cs">
+      <DependentUpon>AD_bureaux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_ModifierFN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_ModifierFN.Designer.cs">
+      <DependentUpon>AD_ModifierFN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_ModifierRU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_ModifierRU.Designer.cs">
+      <DependentUpon>AD_ModifierRU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Profil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Profil.Designer.cs">
+      <DependentUpon>AD_Profil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Upd_bureau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\AD_Upd_bureau.Designer.cs">
+      <DependentUpon>AD_Upd_bureau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\ConfirmDandQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\ConfirmDandQ.Designer.cs">
+      <DependentUpon>ConfirmDandQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrateur\MSGbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrateur\MSGbox.Designer.cs">
+      <DependentUpon>MSGbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\AjouterRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\AjouterRDV.Designer.cs">
+      <DependentUpon>AjouterRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BUREAU_DES_REUNIONS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\CRuenion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\CRuenion.Designer.cs">
+      <DependentUpon>CRuenion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FONCTIONNAIRE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\regist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\regist.Designer.cs">
+      <DependentUpon>regist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\ModifierRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\ModifierRDV.Designer.cs">
+      <DependentUpon>ModifierRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnaire\Profil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\Profil.Designer.cs">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fonctionnaire\rendez_vous.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fonctionnaire\rendez_vous.Designer.cs">
+      <DependentUpon>rendez_vous.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REUNION.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RNADEZ_VOUS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Fonctionnaire\Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\ADaccueil.resx">
+      <DependentUpon>ADaccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\ADcomptes.resx">
+      <DependentUpon>ADcomptes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\Add_ruenion.resx">
+      <DependentUpon>Add_ruenion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\Admin_AC.resx">
+      <DependentUpon>Admin_AC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\ADruenion.resx">
+      <DependentUpon>ADruenion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_Add_bureau.resx">
+      <DependentUpon>AD_Add_bureau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_Add_FN.resx">
+      <DependentUpon>AD_Add_FN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_bureaux.resx">
+      <DependentUpon>AD_bureaux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_ModifierFN.resx">
+      <DependentUpon>AD_ModifierFN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_ModifierRU.resx">
+      <DependentUpon>AD_ModifierRU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_Profil.resx">
+      <DependentUpon>AD_Profil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\AD_Upd_bureau.resx">
+      <DependentUpon>AD_Upd_bureau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\ConfirmDandQ.resx">
+      <DependentUpon>ConfirmDandQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrateur\MSGbox.resx">
+      <DependentUpon>MSGbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\AjouterRDV.resx">
+      <DependentUpon>AjouterRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\CRuenion.resx">
+      <DependentUpon>CRuenion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\regist.resx">
+      <DependentUpon>regist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\ModifierRDV.resx">
+      <DependentUpon>ModifierRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonctionnaire\Profil.resx">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Fonctionnaire\rendez_vous.resx">
+      <DependentUpon>rendez_vous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo2.ico" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\بلدية.png" />
+    <None Include="Resources\minn blur1.png" />
+    <None Include="Resources\minn blur.png" />
+    <None Include="Resources\icons8_work_60px.png" />
+    <None Include="Resources\icons8_unlock_26px.png" />
+    <None Include="Resources\icons8_sign_out_240px.png" />
+    <None Include="Resources\icons8_sign_out_52px_1.png" />
+    <None Include="Resources\icons8_phone_64px.png" />
+    <None Include="Resources\icons8_password_reset_52px.png" />
+    <None Include="Resources\icons8_microsoft_admin_60px_1.png" />
+    <None Include="Resources\icons8_microsoft_admin_60px.png" />
+    <None Include="Resources\icons8_meeting_room_60px_1.png" />
+    <None Include="Resources\icons8_meeting_room_30px_1.png" />
+    <None Include="Resources\icons8_management_100px.png" />
+    <None Include="Resources\icons8_management_60px.png" />
+    <None Include="Resources\icons8_management_50px.png" />
+    <None Include="Resources\icons8_logout_rounded_left_filled_24px.png" />
+    <None Include="Resources\icons8_key_2_64px.png" />
+    <None Include="Resources\icons8_inscription_60px.png" />
+    <None Include="Resources\icons8_home_64px_11.png" />
+    <None Include="Resources\icons8_home_64px_1.png" />
+    <None Include="Resources\icons8_home_48px1.png" />
+    <None Include="Resources\icons8_home_48px.png" />
+    <None Include="Resources\icons8_home_24px.png" />
+    <None Include="Resources\icons8_female_profile_48px.png" />
+    <None Include="Resources\icons8_female_profile_24px.png" />
+    <None Include="Resources\icons8_email_send_48px.png" />
+    <None Include="Resources\icons8_email_30px.png" />
+    <None Include="Resources\icons8_edit_user_male_200px_1.png" />
+    <None Include="Resources\icons8_edit_user_male_200px.png" />
+    <None Include="Resources\icons8_edit_node_24px.png" />
+    <None Include="Resources\icons8_edit_administrator_filled_24px.png" />
+    <None Include="Resources\icons8_edit_account_100px_1.png" />
+    <None Include="Resources\icons8_edit_account_100px.png" />
+    <None Include="Resources\icons8_edit_account_50px_2.png" />
+    <None Include="Resources\icons8_customer_32px.png" />
+    <None Include="Resources\icons8_commercial_development_management_24px.png" />
+    <None Include="Resources\icons8_close_window_200px.png" />
+    <None Include="Resources\icons8_close_window_100px.png" />
+    <None Include="Resources\icons8_close_window_52px.png" />
+    <None Include="Resources\icons8_close_window_26px.png" />
+    <None Include="Resources\icons8_city_48px.png" />
+    <None Include="Resources\icons8_bulleted_list_64px_1.png" />
+    <None Include="Resources\commun.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

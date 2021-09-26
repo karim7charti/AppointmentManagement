@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MonRDVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="A_ID" />
+          </Key>
+          <Property Name="A_ID" Type="int" Nullable="false" />
+          <Property Name="A_NOM" Type="varchar" MaxLength="40" />
+          <Property Name="A_PRENOM" Type="varchar" MaxLength="40" />
+          <Property Name="A_EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="A_TEL" Type="numeric" Precision="12" Scale="0" />
+          <Property Name="A_PASSWORD" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="BUREAU_DES_REUNIONS">
+          <Key>
+            <PropertyRef Name="B_ID" />
+          </Key>
+          <Property Name="B_ID" Type="int" Nullable="false" />
+          <Property Name="B_NUMERO" Type="bigint" />
+          <Property Name="B_NOM" Type="varchar" MaxLength="150" />
+          <Property Name="B_CHEF" Type="char" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FONCTIONNAIRE">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="int" Nullable="false" />
+          <Property Name="U_NOM" Type="varchar" MaxLength="50" />
+          <Property Name="U_PRENOM" Type="varchar" MaxLength="50" />
+          <Property Name="U_TEL" Type="numeric" Precision="12" Scale="0" />
+          <Property Name="U_VILLE" Type="varchar" MaxLength="50" />
+          <Property Name="U_EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="U_PASSWORD" Type="varchar" MaxLength="255" />
+          <Property Name="U_POSTE" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="REUNION">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="int" Nullable="false" />
+          <Property Name="B_ID" Type="int" />
+          <Property Name="R_DATE" Type="datetime" />
+          <Property Name="R_HEURE" Type="datetime" />
+          <Property Name="R_SUJET" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="RNADEZ_VOUS">
+          <Key>
+            <PropertyRef Name="RD_ID" />
+          </Key>
+          <Property Name="RD_ID" Type="int" Nullable="false" />
+          <Property Name="U_ID" Type="int" Nullable="false" />
+          <Property Name="RD_NOM_PR" Type="varchar" MaxLength="40" />
+          <Property Name="RD_PERNOM_PR" Type="varchar" MaxLength="40" />
+          <Property Name="RD_DATE" Type="datetime" />
+          <Property Name="RD_HEURE" Type="datetime" />
+          <Property Name="RD_CAUSE" Type="varchar" MaxLength="255" />
+          <Property Name="RD_TEL_PR" Type="numeric" Precision="12" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="MonRDVModelStoreContainer">
+          <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BUREAU_DES_REUNIONS" EntityType="Self.BUREAU_DES_REUNIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FONCTIONNAIRE" EntityType="Self.FONCTIONNAIRE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REUNION" EntityType="Self.REUNION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RNADEZ_VOUS" EntityType="Self.RNADEZ_VOUS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MonRDVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="A_ID" />
+          </Key>
+          <Property Name="A_ID" Type="Int32" Nullable="false" />
+          <Property Name="A_NOM" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="A_PRENOM" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="A_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="A_TEL" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="A_PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BUREAU_DES_REUNIONS">
+          <Key>
+            <PropertyRef Name="B_ID" />
+          </Key>
+          <Property Name="B_ID" Type="Int32" Nullable="false" />
+          <Property Name="B_NUMERO" Type="Int64" />
+          <Property Name="B_NOM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="B_CHEF" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FONCTIONNAIRE">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="Int32" Nullable="false" />
+          <Property Name="U_NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="U_PRENOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="U_TEL" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="U_VILLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="U_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="U_PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_POSTE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="REUNION">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="Int32" Nullable="false" />
+          <Property Name="B_ID" Type="Int32" />
+          <Property Name="R_DATE" Type="DateTime" Precision="3" />
+          <Property Name="R_HEURE" Type="DateTime" Precision="3" />
+          <Property Name="R_SUJET" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RNADEZ_VOUS">
+          <Key>
+            <PropertyRef Name="RD_ID" />
+          </Key>
+          <Property Name="RD_ID" Type="Int32" Nullable="false" />
+          <Property Name="U_ID" Type="Int32" Nullable="false" />
+          <Property Name="RD_NOM_PR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="RD_PERNOM_PR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="RD_DATE" Type="DateTime" Precision="3" />
+          <Property Name="RD_HEURE" Type="DateTime" Precision="3" />
+          <Property Name="RD_CAUSE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RD_TEL_PR" Type="Decimal" Precision="12" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="DB_MonRDV" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+          <EntitySet Name="BUREAU_DES_REUNIONS" EntityType="Self.BUREAU_DES_REUNIONS" />
+          <EntitySet Name="FONCTIONNAIREs" EntityType="Self.FONCTIONNAIRE" />
+          <EntitySet Name="REUNIONs" EntityType="Self.REUNION" />
+          <EntitySet Name="RNADEZ_VOUS" EntityType="Self.RNADEZ_VOUS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MonRDVModelStoreContainer" CdmEntityContainer="DB_MonRDV">
+          <EntitySetMapping Name="ADMINs">
+            <EntityTypeMapping TypeName="MonRDVModel.ADMIN">
+              <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="A_ID" ColumnName="A_ID" />
+                <ScalarProperty Name="A_NOM" ColumnName="A_NOM" />
+                <ScalarProperty Name="A_PRENOM" ColumnName="A_PRENOM" />
+                <ScalarProperty Name="A_EMAIL" ColumnName="A_EMAIL" />
+                <ScalarProperty Name="A_TEL" ColumnName="A_TEL" />
+                <ScalarProperty Name="A_PASSWORD" ColumnName="A_PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BUREAU_DES_REUNIONS">
+            <EntityTypeMapping TypeName="MonRDVModel.BUREAU_DES_REUNIONS">
+              <MappingFragment StoreEntitySet="BUREAU_DES_REUNIONS">
+                <ScalarProperty Name="B_ID" ColumnName="B_ID" />
+                <ScalarProperty Name="B_NUMERO" ColumnName="B_NUMERO" />
+                <ScalarProperty Name="B_NOM" ColumnName="B_NOM" />
+                <ScalarProperty Name="B_CHEF" ColumnName="B_CHEF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FONCTIONNAIREs">
+            <EntityTypeMapping TypeName="MonRDVModel.FONCTIONNAIRE">
+              <MappingFragment StoreEntitySet="FONCTIONNAIRE">
+                <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+                <ScalarProperty Name="U_NOM" ColumnName="U_NOM" />
+                <ScalarProperty Name="U_PRENOM" ColumnName="U_PRENOM" />
+                <ScalarProperty Name="U_TEL" ColumnName="U_TEL" />
+                <ScalarProperty Name="U_VILLE" ColumnName="U_VILLE" />
+                <ScalarProperty Name="U_EMAIL" ColumnName="U_EMAIL" />
+                <ScalarProperty Name="U_PASSWORD" ColumnName="U_PASSWORD" />
+                <ScalarProperty Name="U_POSTE" ColumnName="U_POSTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REUNIONs">
+            <EntityTypeMapping TypeName="MonRDVModel.REUNION">
+              <MappingFragment StoreEntitySet="REUNION">
+                <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+                <ScalarProperty Name="B_ID" ColumnName="B_ID" />
+                <ScalarProperty Name="R_DATE" ColumnName="R_DATE" />
+                <ScalarProperty Name="R_HEURE" ColumnName="R_HEURE" />
+                <ScalarProperty Name="R_SUJET" ColumnName="R_SUJET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RNADEZ_VOUS">
+            <EntityTypeMapping TypeName="MonRDVModel.RNADEZ_VOUS">
+              <MappingFragment StoreEntitySet="RNADEZ_VOUS">
+                <ScalarProperty Name="RD_ID" ColumnName="RD_ID" />
+                <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+                <ScalarProperty Name="RD_NOM_PR" ColumnName="RD_NOM_PR" />
+                <ScalarProperty Name="RD_PERNOM_PR" ColumnName="RD_PERNOM_PR" />
+                <ScalarProperty Name="RD_DATE" ColumnName="RD_DATE" />
+                <ScalarProperty Name="RD_HEURE" ColumnName="RD_HEURE" />
+                <ScalarProperty Name="RD_CAUSE" ColumnName="RD_CAUSE" />
+                <ScalarProperty Name="RD_TEL_PR" ColumnName="RD_TEL_PR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
